@@ -1,0 +1,12 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "^.*$",
+        "isAsync": false,
+        "cmd": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${workspaceFolder}\\.vscode\\autosync.ps1\""
+      }
+    ]
+  },
+  "files.autoSave": "onFocusChange"
+}
