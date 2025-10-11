@@ -27,22 +27,22 @@ export default function Header() {
       <ul className={`o2 ${isActive ? "active" : ""}`} id="nav-menu">
         <li>
           <a href="#showcase" onClick={() => setIsActive(false)}>
-            Home
+            Market
           </a>
         </li>
         <li>
           <a href="#aboutUs" onClick={() => setIsActive(false)}>
-            About
+            Product
           </a>
         </li>
         <li>
           <a href="#howit" onClick={() => setIsActive(false)}>
-            Projects
+            Education
           </a>
         </li>
         <li>
           <a href="#contact" onClick={() => setIsActive(false)}>
-            Contact
+            Community
           </a>
         </li>
       </ul>
