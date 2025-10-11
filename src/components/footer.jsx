@@ -13,25 +13,25 @@ const comp = [
     tr: "Portfolio",
   },
   {
-    head: "Company",
-    trade: "Trade",
-    trad: "Feature",
-    tra: "Market",
-    tr: "Portfolio",
+    head: "Cypto Market",
+    trade: "Price chart",
+    trad: "Market Analysis",
+    tra: "Latest News",
+    tr: "ICO (initail coin offering)",
   },
   {
-    head: "Company",
-    trade: "Trade",
+    head: "Resource",
+    trade: "Guide for Beginners",
     trad: "Feature",
-    tra: "Market",
-    tr: "Portfolio",
+    tra: "Trading Platform",
+    tr: "Digital Wallet",
   },
   {
-    head: "Company",
-    trade: "Trade",
-    trad: "Feature",
-    tra: "Market",
-    tr: "Portfolio",
+    head: "Community",
+    trade: "Crypto Discussion forum",
+    trad: "Discord Group",
+    tra: "Local MeetUp Events",
+    tr: "Project Collaboration",
   },
 ];
 export default function footer() {
@@ -79,6 +79,7 @@ export default function footer() {
         ))}
       </div>
       <div className="bodtop">
+        <span>Website created by David Fubara David-West</span>
         <span>Terms & Condition</span>
         <span>Privacy policy</span>
         <span>&copy; Copyright 2025 Reo</span>
