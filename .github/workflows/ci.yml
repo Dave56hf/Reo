@@ -37,7 +37,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          # include run id and node-version so artifact name is unique per run/matrix
-          name: build-output-${{ github.run_id }}-${{ matrix.node-version }}
+          # include node-version so artifact name is unique per matrix entry
+          name: build-output-${{ matrix.node-version }}
           path: |
             dist
