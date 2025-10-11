@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footCon {
+    position: relative;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding-top: 100px;
+}
+
+/* Modern Contact Section */
+.Contact {
+    margin: 0 auto;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #1e90ff 0%, #0066cc 100%);
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+    position: absolute;
+    top: -140px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 50px 40px;
+    line-height: 1.6;
+    z-index: 2;
+    box-shadow:
+        0 20px 60px rgba(30, 144, 255, 0.3),
+        0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.Contact h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.Contact p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.Contact .btn {
+    padding: 14px 32px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 8px 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 140px;
+}
+
+.Contact .get {
+    background: #ffffff;
+    color: #1e90ff;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.Contact .get:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.Contact .con {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.Contact .con:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Modern Footer Layout */
+.foote {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 120px 40px 80px 40px;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Brand Section */
+.foot1 {
+    flex: 1;
+    min-width: 280px;
+    text-align: left;
+}
+
+.foot1 h1 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.FaEthereum {
+    font-size: 32px !important;
+}
+
+.foot1 p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 300px;
+}
+
+/* Social Icons */
+.foot1 .fa {
+    display: flex;
+    gap: 15px;
+}
+
+.foot1 svg {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.foot1 svg:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Footer Links Sections */
+.foot2 {
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    min-width: 180px;
+}
+
+.foot2 h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.foot2 ul {
+    list-style: none;
+    line-height: 2.2;
+}
+
+.foot2 li {
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.foot2 li:hover {
+    color: #1e90ff;
+    transform: translateX(5px);
+}
+
+/* Bottom Bar */
+.bodtop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 1200px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.bodtop span {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.bodtop span:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .Contact {
+        width: 95%;
+        padding: 40px 30px;
+    }
+
+    .Contact h2 {
+        font-size: 2.2rem;
+    }
+
+    .foote {
+        padding: 120px 30px 60px 30px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footCon {
+        padding-top: 160px;
+    }
+
+    .Contact {
+        top: -120px;
+        padding: 35px 25px;
+    }
+
+    .Contact h2 {
+        font-size: 2rem;
+    }
+
+    .Contact p {
+        font-size: 1rem;
+    }
+
+    .Contact .btn {
+        padding: 12px 24px;
+        min-width: 120px;
+        font-size: 14px;
+    }
+
+    .foote {
+        padding: 100px 20px 50px 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .foot1 {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foot1 h1 {
+        justify-content: center;
+    }
+
+    .foot2 {
+        text-align: center;
+        min-width: auto;
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .bodtop {
+        flex-direction: column;
+        gap: 15px;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footCon {
+        padding-top: 140px;
+    }
+
+    .Contact {
+        top: -100px;
+        padding: 30px 20px;
+        width: 98%;
+    }
+
+    .Contact h2 {
+        font-size: 1.75rem;
+    }
+
+    .Contact .btn {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        margin: 8px auto;
+    }
+
+    .foote {
+        padding: 80px 15px 40px 15px;
+    }
+
+    .foot1 h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    .footCon {
+        background: linear-gradient(135deg, #0a0f1c 0%, #151f33 100%);
+    }
+
+    .Contact {
+        background: linear-gradient(135deg, #1a5fb4 0%, #0d4d9c 100%);
+    }
+}

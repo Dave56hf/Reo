@@ -1,0 +1,75 @@
+.showcase {
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background-color: whitesmoke;
+  padding: 5%;
+  background: linear-gradient(to bottom, white, white, #51b1ff34, #51b1ff3f);
+}
+
+.show1 h3 {
+  font-size: 5rem;
+}
+
+.show1 .highlight {
+  color: rgb(23, 149, 190);
+  border: none;
+}
+
+.show1 span {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 7px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.199);
+}
+
+.show1 p {
+  color: #00000098;
+}
+
+.show1 button {
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.show1 span,
+p {
+  margin-bottom: 30px;
+}
+
+.sho2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.sho2 .im img {
+  width: 350px;
+  /* Increases width */
+  height: auto;
+  /* Maintains aspect ratio */
+}
+
+.icon {
+  display: none;
+}
+
+.icon .ico img {
+  width: 70px;
+  /* Increases width */
+  height: auto;
+  /* Maintains aspect ratio */
+}
+
+.icon .left img {
+  position: absolute;
+  left: 30px;
+}

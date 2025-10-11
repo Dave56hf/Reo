@@ -1,0 +1,329 @@
+.testimonials {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 90px;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+}
+
+.badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(0, 188, 212, 0.1));
+    color: #1e90ff;
+    font-weight: 700;
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(30, 144, 255, 0.2);
+}
+
+.top-text h2 {
+    color: rgb(9, 33, 61);
+    font-size: 2.75rem;
+    margin: 24px 0 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #1e90ff, #00bcd4, #667eea);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 24px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.06),
+        0 1px 4px rgba(0, 0, 0, 0.04);
+    padding: 40px 35px;
+    margin: 0 10px;
+    text-align: left;
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #1e90ff, #00bcd4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.testimonial-card:hover::before {
+    opacity: 1;
+}
+
+.quote {
+    font-size: 16px;
+    color: #334155;
+    margin-bottom: 28px;
+    line-height: 1.7;
+    font-weight: 400;
+    position: relative;
+    padding-left: 20px;
+}
+
+.quote::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: 32px;
+    color: #1e90ff;
+    opacity: 0.3;
+    font-family: serif;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.user-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #f8fafc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover .user-img {
+    transform: scale(1.05);
+}
+
+.user-info h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.2px;
+}
+
+.user-info span {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.rating span {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.arrow-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 16px;
+}
+
+.arrow {
+    border: none;
+    background: #ffffff;
+    color: #1e90ff;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08),
+        0 1px 4px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f1f5f9;
+}
+
+.arrow:hover {
+    background: linear-gradient(135deg, #1e90ff, #00bcd4);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 25px rgba(30, 144, 255, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.arrow:active {
+    transform: translateY(0);
+}
+
+/* Remove the .active class from arrows since both should look the same */
+.arrow.active {
+    background: #ffffff;
+    color: #1e90ff;
+}
+
+.arrow.active:hover {
+    background: linear-gradient(135deg, #1e90ff, #00bcd4);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 80px 20px;
+    }
+
+    .top-text h2 {
+        font-size: 2.25rem;
+    }
+
+    .testimonial-card {
+        padding: 32px 28px;
+        margin: 0 8px;
+    }
+
+    .user-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .arrow {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials {
+        padding: 60px 16px;
+    }
+
+    .top-text h2 {
+        font-size: 2rem;
+    }
+
+    .testimonial-card {
+        padding: 28px 24px;
+        margin: 0 4px;
+    }
+
+    .quote {
+        font-size: 15px;
+        padding-left: 16px;
+    }
+
+    .user-img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .testimonials {
+        background: linear-gradient(135deg, rgb(255, 255, 255) 0%, #ffffff 100%);
+    }
+
+    .testimonial-card {
+        background: #334155;
+        border-color: #475569;
+        color: #e2e8f0;
+    }
+
+    .quote {
+        color: #e2e8f0;
+    }
+
+    .user-info h4 {
+        color: #f1f5f9;
+    }
+
+    .user-info span {
+        color: #94a3b8;
+    }
+
+    .rating span {
+        color: #94a3b8;
+    }
+
+    .arrow {
+        background: #475569;
+        color: #e2e8f0;
+        border-color: #64748b;
+    }
+}

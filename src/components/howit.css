@@ -1,0 +1,61 @@
+.howit {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 40px;
+  line-height: 1.6rem;
+}
+
+.howit .how1 {
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.how1,
+span {
+  margin-bottom: 20px;
+}
+
+.how1 span {
+  border: 1px solid rgb(56, 165, 255);
+  padding: 7px 15px;
+  border-radius: 20px;
+  background-color: #417aff28;
+  color: #7da4fd;
+}
+
+.how1 h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.how2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: space-between;
+  color: white;
+  margin-top: 30px;
+  align-items: center;
+  gap: 24px;
+}
+
+.howblock {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.075);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.howblock span {
+  background: linear-gradient(-40deg, rgba(255, 255, 255, 0) 23%, rgba(255, 255, 255, 0.822)50%, rgba(255, 255, 255, 0));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
