@@ -1,54 +1,66 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Header.css";
-import Ethlogo from "../assets/4373172_ethereum_logo_logos_icon.png"; // adjust path
+import EthLogo from "../assets/4373172_ethereum_logo_logos_icon.png";
+
+const navItems = [
+  { label: "Market", href: "#showcase" },
+  { label: "Product", href: "#about" },
+  { label: "Education", href: "#how-it-works" },
+  { label: "Community", href: "#contact" },
+];
 
 export default function Header() {
-  const [isActive, setIsActive] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsActive(!isActive);
-  };
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header>
-      <div className="o1">
-        <img src={Ethlogo} alt="Logo" />
+    <header className="site-header">
+      <a className="brand" href="#showcase" onClick={closeMenu}>
+        <img src={EthLogo} alt="Reo logo" />
         <h2>Reo</h2>
-      </div>
+      </a>
 
-      {/* Hamburger menu */}
-      <div className="hamburger" id="hamburger-menu" onClick={toggleMenu}>
+      <button
+        className={`hamburger ${isMenuOpen ? "active" : ""}`}
+        type="button"
+        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={isMenuOpen}
+        aria-controls="site-nav"
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+      >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
 
-      {/* Navigation */}
-      <ul className={`o2 ${isActive ? "active" : ""}`} id="nav-menu">
-        <li>
-          <a href="#showcase" onClick={() => setIsActive(false)}>
-            Market
-          </a>
-        </li>
-        <li>
-          <a href="#aboutUs" onClick={() => setIsActive(false)}>
-            Product
-          </a>
-        </li>
-        <li>
-          <a href="#howit" onClick={() => setIsActive(false)}>
-            Education
-          </a>
-        </li>
-        <li>
-          <a href="#contact" onClick={() => setIsActive(false)}>
-            Community
-          </a>
-        </li>
-      </ul>
+      <nav>
+        <ul className={`nav-links ${isMenuOpen ? "active" : ""}`} id="site-nav">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a href={item.href} onClick={closeMenu}>
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
-      <div className="o3">
-        <button type="button">Get Started</button>
+      <div className="cta-wrap">
+        <a className="cta-button" href="#contact">
+          Get Started
+        </a>
       </div>
     </header>
   );

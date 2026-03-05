@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { FaArrowLeft, FaArrowRight, FaStar } from "react-icons/fa";
 import "./testimonials.css";
-import { FaStar, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const testimonials = [
   {
     name: "Maria S.",
     role: "New Investor",
-    text: `"The platform is intuitive, and their educational guides helped me feel confident. I feel safe and empowered to start my investing journey here."`,
+    text: "The platform is intuitive, and the educational guides helped me feel confident. I feel safe and empowered to start my investing journey here.",
     rating: 5,
     img: "https://img.freepik.com/premium-photo/person-suit_777078-56281.jpg",
   },
   {
     name: "Ryan C.",
     role: "Active Trader",
-    text: `"Reo is so clean and easy to use, and I was able to make my first trade with zero hassle. It's the perfect place for anyone just starting out."`,
+    text: "Reo is clean and easy to use, and I was able to make my first trade with zero hassle. It is a strong platform for beginners.",
     rating: 4.5,
     img: "https://www.nlc.org/wp-content/uploads/2021/07/Eduardo-Cisneros-Headshot-e1627913538310.jpg",
   },
   {
     name: "Jessica L.",
     role: "Crypto Enthusiast",
-    text: `"Customer support is excellent and I love the smooth user experience. Highly recommended!"`,
+    text: "Customer support is excellent and I love the smooth user experience. Highly recommended.",
     rating: 5,
     img: "https://tse4.mm.bing.net/th/id/OIP.XkOBcwMZmQ30fiEWsbIZ_wHaHa?pid=ImgDet&w=192&h=192&c=7&o=7&rm=3",
   },
@@ -31,22 +31,23 @@ export default function Testimonials() {
 
   const prevSlide = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
+      prev === 0 ? testimonials.length - 1 : prev - 1,
     );
   };
 
   const nextSlide = () => {
     setCurrentIndex((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
+      prev === testimonials.length - 1 ? 0 : prev + 1,
     );
   };
 
   return (
-    <section className="testimonials">
+    <section className="testimonials" aria-labelledby="testimonials-title">
       <div className="top-text">
         <span className="badge">Testimonials</span>
-        <h2>
-          Don’t Just <br />
+        <h2 id="testimonials-title">
+          Don&apos;t Just
+          <br />
           <span className="gradient-text">Take Our Word For It.</span>
         </h2>
       </div>
@@ -54,39 +55,52 @@ export default function Testimonials() {
       <div className="slider">
         <div
           className="slides"
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
-          }}
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {testimonials.map((t, index) => (
-            <div className="testimonial-card" key={index}>
-              <p className="quote">{t.text}</p>
+          {testimonials.map((testimonial) => (
+            <article className="testimonial-card" key={testimonial.name}>
+              <p className="quote">{testimonial.text}</p>
               <div className="user-info">
-                <img src={t.img} alt={t.name} className="user-img" />
+                <img
+                  src={testimonial.img}
+                  alt={`${testimonial.name} testimonial avatar`}
+                  className="user-img"
+                  loading="lazy"
+                />
                 <div>
-                  <h4>{t.name}</h4>
-                  <span>{t.role}</span>
+                  <h4>{testimonial.name}</h4>
+                  <span>{testimonial.role}</span>
                 </div>
               </div>
-              <div className="rating">
-                {[...Array(Math.floor(t.rating))].map((_, i) => (
-                  <FaStar key={i} color="#1E90FF" />
+              <div className="rating" aria-label={`Rating ${testimonial.rating} out of 5`}>
+                {[...Array(Math.floor(testimonial.rating))].map((_, index) => (
+                  <FaStar key={`${testimonial.name}-${index}`} color="#1E90FF" />
                 ))}
-                {t.rating % 1 !== 0 && (
+                {testimonial.rating % 1 !== 0 && (
                   <FaStar color="#1E90FF" style={{ opacity: 0.5 }} />
                 )}
-                <span>{t.rating}</span>
+                <span>{testimonial.rating}</span>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
 
       <div className="arrow-buttons">
-        <button className="arrow" onClick={prevSlide}>
+        <button
+          className="arrow"
+          type="button"
+          aria-label="Previous testimonial"
+          onClick={prevSlide}
+        >
           <FaArrowLeft />
         </button>
-        <button className="arrow active" onClick={nextSlide}>
+        <button
+          className="arrow"
+          type="button"
+          aria-label="Next testimonial"
+          onClick={nextSlide}
+        >
           <FaArrowRight />
         </button>
       </div>

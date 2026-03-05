@@ -1,89 +1,96 @@
+import { FaEthereum, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import "./footer.css";
-import { FaEthereum } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
 
-const comp = [
+const footerGroups = [
   {
-    head: "Company",
-    trade: "Trade",
-    trad: "Feature",
-    tra: "Market",
-    tr: "Portfolio",
+    heading: "Company",
+    links: ["Trade", "Features", "Market", "Portfolio"],
   },
   {
-    head: "Cypto Market",
-    trade: "Price chart",
-    trad: "Market Analysis",
-    tra: "Latest News",
-    tr: "ICO (initail coin offering)",
+    heading: "Crypto Market",
+    links: [
+      "Price Charts",
+      "Market Analysis",
+      "Latest News",
+      "Initial Coin Offerings",
+    ],
   },
   {
-    head: "Resource",
-    trade: "Guide for Beginners",
-    trad: "Feature",
-    tra: "Trading Platform",
-    tr: "Digital Wallet",
+    heading: "Resources",
+    links: ["Guide for Beginners", "Features", "Trading Platform", "Digital Wallet"],
   },
   {
-    head: "Community",
-    trade: "Crypto Discussion forum",
-    trad: "Discord Group",
-    tra: "Local MeetUp Events",
-    tr: "Project Collaboration",
+    heading: "Community",
+    links: [
+      "Crypto Discussion Forum",
+      "Discord Group",
+      "Local Meetup Events",
+      "Project Collaboration",
+    ],
   },
 ];
-export default function footer() {
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div div className="footCon">
-      <div className="Contact">
-        <h2>Ready to start your journey?</h2>
+    <footer className="footCon" id="contact">
+      <section className="Contact" aria-labelledby="cta-title">
+        <h2 id="cta-title">Ready to start your journey?</h2>
         <p>
-          Its's time to build your future. Sign up now and begin trading in
-          minutes
+          It&apos;s time to build your future. Sign up now and begin trading in
+          minutes.
         </p>
-        <button className="btn get">Get started</button>
-        <button className="btn con">Contact Us</button>
-      </div>
-      {/* footer */}
+        <button className="btn get" type="button">
+          Get Started
+        </button>
+        <button className="btn con" type="button">
+          Contact Us
+        </button>
+      </section>
+
       <div className="foote">
         <div className="foot1">
-          <h1>
-            <FaEthereum
-              className="FaEthereum"
-              color="#1E90FF"
-              style={{ fontSize: 28 }}
-            />
+          <h3>
+            <FaEthereum className="FaEthereum" color="#1E90FF" />
             REO
-          </h1>
+          </h3>
           <p>
-            Your gateway to the future <br />
-            of finance powred by Reo
+            Your gateway to the future
+            <br />
+            of finance powered by Reo.
           </p>
           <div className="fa">
-            <FaTwitter color="#fff" /> <FaInstagram color="#fff" />
-            <FaFacebook color="#fff" />
+            <a href="https://twitter.com" aria-label="Reo on Twitter">
+              <FaTwitter color="#fff" />
+            </a>
+            <a href="https://instagram.com" aria-label="Reo on Instagram">
+              <FaInstagram color="#fff" />
+            </a>
+            <a href="https://facebook.com" aria-label="Reo on Facebook">
+              <FaFacebook color="#fff" />
+            </a>
           </div>
         </div>
-        {comp.map((i, index) => (
-          <div className="foot2" key={index}>
-            <h4>{i.head}</h4>
+
+        {footerGroups.map((group) => (
+          <div className="foot2" key={group.heading}>
+            <h4>{group.heading}</h4>
             <ul>
-              <li>{i.trade}</li>
-              <li>{i.trad}</li>
-              <li>{i.tra}</li>
-              <li>{i.tr}</li>
+              {group.links.map((link) => (
+                <li key={link}>{link}</li>
+              ))}
             </ul>
           </div>
         ))}
       </div>
+
       <div className="bodtop">
         <span>Website created by David Fubara David-West</span>
-        <span>Terms & Condition</span>
-        <span>Privacy policy</span>
-        <span>&copy; Copyright 2025 Reo</span>
+        <span>Terms and Conditions</span>
+        <span>Privacy Policy</span>
+        <span>&copy; {currentYear} Reo</span>
       </div>
-    </div>
+    </footer>
   );
 }

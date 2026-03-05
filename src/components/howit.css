@@ -1,23 +1,18 @@
 .howit {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   padding: 40px;
-  line-height: 1.6rem;
+  line-height: 1.6;
 }
 
 .howit .how1 {
-  justify-content: center;
-  align-items: center;
-  justify-content: space-around;
   margin-bottom: 30px;
-  color: white;
-}
-
-.how1,
-span {
-  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
 }
 
 .how1 span {
+  display: inline-block;
+  margin-bottom: 20px;
   border: 1px solid rgb(56, 165, 255);
   padding: 7px 15px;
   border-radius: 20px;
@@ -32,11 +27,10 @@ span {
 
 .how2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-content: space-between;
-  color: white;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  color: #fff;
   margin-top: 30px;
-  align-items: center;
+  align-items: stretch;
   gap: 24px;
 }
 
@@ -45,17 +39,26 @@ span {
   background-color: rgba(255, 255, 255, 0.075);
   border-radius: 10px;
   width: 100%;
-  max-width: 350px;
   padding: 20px;
   margin: 0 auto;
 }
 
+.howblock h3 {
+  margin-bottom: 12px;
+}
+
 .howblock span {
-  background: linear-gradient(-40deg, rgba(255, 255, 255, 0) 23%, rgba(255, 255, 255, 0.822)50%, rgba(255, 255, 255, 0));
+  display: inline-block;
+  background: linear-gradient(
+    -40deg,
+    rgba(255, 255, 255, 0) 23%,
+    rgba(255, 255, 255, 0.82) 50%,
+    rgba(255, 255, 255, 0)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2.6rem;
+  font-weight: 700;
   margin-bottom: 20px;
 }

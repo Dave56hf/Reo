@@ -1,22 +1,24 @@
 import Header from "./components/header";
 import Showcase from "./components/showcase";
 import About from "./components/about";
-import Howit from "./components/howit";
+import HowIt from "./components/howit";
 import Testimonials from "./components/testimonials";
 import Footer from "./components/footer";
 import "./App.css";
 
-function Reon() {
+function App() {
   return (
-    <div className="container">
+    <div className="app-shell">
       <Header />
-      <Showcase />
-      <About />
-      <Howit />
-      <Testimonials />
+      <main className="main-content">
+        <Showcase />
+        <About />
+        <HowIt />
+        <Testimonials />
+      </main>
       <Footer />
     </div>
   );
 }
 
-export default Reon;
+export default App;
